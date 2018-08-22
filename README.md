@@ -5,6 +5,7 @@
     4     1 4 6 4 1          
           0 1 2 3 4
 https://pt.slideshare.net/gustavogfs94/introduo-ao-paradigma-funcional-com-scala
+http://www.dclick.com.br/2010/12/01/utilizando-listas-em-scala/
           */
 
 def pascal(col: Int, lin: Int): Int = (col,lin) match{
