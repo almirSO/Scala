@@ -1,3 +1,7 @@
+println(" ");
+println("---------------------INICIO DA LISTA DE EXERCICIO------------------------");
+println(" ");
+
 /*  0     1
     1     1 1
     2     1 2 1
@@ -6,7 +10,7 @@
           0 1 2 3 4
 https://pt.slideshare.net/gustavogfs94/introduo-ao-paradigma-funcional-com-scala
 http://www.dclick.com.br/2010/12/01/utilizando-listas-em-scala/
-          */
+*/
 
 def pascal(col: Int, lin: Int): Int = (col,lin) match{
   case (0,lin) => 1
@@ -42,12 +46,79 @@ println("fib de 4: " + fib(4) + "| fat de 4: " + fat(4));
 println("fib de 5: " + fib(5) + "| fat de 5: " + fat(5));
 println("fib de 10: " + fib(10) + "| fat de 10: " + fat(10));
 
+// LISTAS ................................................................................................
 
-var lista = 1 :: 2 :: 3 :: 4 :: 5 :: Nil
+println(" ");
+println(".....................Usando lista........................");
+println(" ");
 
-def somaLista(l: List[Int], soma: Int = 0): Int = l match { 
-  case Nil => soma 
-  case head::tail => somaLista(tail, head + soma) 
+var lista = 20 :: 1 :: 2 :: 3 :: 4 :: 5 :: Nil
+
+def somaLista(l: List[Int]): Int = l match { 
+  case Nil => 0
+  case head::tail => head + somaLista(tail) 
 }
 
-println("somatorio da lista: [1,2,3,4,5] = " + somaLista (lista));
+def subtracaoLista(l: List[Int]): Int = l match { 
+  case Nil => 0
+  case head::tail => head - somaLista(tail) 
+}
+
+def multiplicacaoLista(l: List[Int]): Int = l match { 
+  case Nil => 1
+  case head::tail => head * somaLista(tail) 
+}
+
+println("somatorio da lista: [20,1,2,3,4,5] = " + somaLista (lista));
+println("subtração da lista: [20,1,2,3,4,5] = " + subtracaoLista (lista));
+println("multiplicação da lista: [20,1,2,3,4,5] = " + multiplicacaoLista (lista));
+
+println(" ");
+println("-----------------------FIM DA LISTA DE EXERCICIO----------------------------");
+println(" ");
+
+// feito em aula........................................................
+
+println(" ");
+println("...................FEIRO EM AULA.......................");
+println(" ");
+
+def contaKdeNumero (numero:Int, k:Int):Int = {
+  if (numero<10){
+    if(numero==k) 1
+    else 0
+  } 
+  else {
+    if(numero%10==k) contaKdeNumero(numero/10,k) + 1
+    else contaKdeNumero(numero/10,k)
+  }
+}
+
+println("OCORRENCIAS DE 0 EM 1223339 " + contaKdeNumero(1223339,0))
+println("OCORRENCIAS DE 1 EM 1223339 " + contaKdeNumero(1223339,1))
+println("OCORRENCIAS DE 2 EM 1223339 " + contaKdeNumero(1223339,2))
+println("OCORRENCIAS DE 3 EM 1223339 " + contaKdeNumero(1223339,3))
+println("OCORRENCIAS DE 4 EM 1223339 " + contaKdeNumero(1223339,4))
+println("OCORRENCIAS DE 5 EM 1223339 " + contaKdeNumero(1223339,5))
+println("OCORRENCIAS DE 6 EM 1223339 " + contaKdeNumero(1223339,6))
+println("OCORRENCIAS DE 9 EM 1223339 " + contaKdeNumero(1223339,9))
+
+
+
+def converteDecBin (numero:Int):String = numero match{
+  case (numero) if numero<2 => ""+numero
+  case _ => converteDecBin(numero/2) + numero%2
+}
+
+println("0 em binario eh: " + converteDecBin(0));
+println("1 em binario eh: " + converteDecBin(1));
+println("10 em binario eh: " + converteDecBin(10));
+println("100 em binario eh: " + converteDecBin(100));
+println("2 em binario eh: " + converteDecBin(2));
+println("350 em binario eh: " + converteDecBin(350));
+println("9 em binario eh: " + converteDecBin(9));
+println("12 em binario eh: " + converteDecBin(12));
+println("19 em binario eh: " + converteDecBin(19));
+println("33 em binario eh: " + converteDecBin(33));
+println("99 em binario eh: " + converteDecBin(99));
+println("1000 em binario eh: " + converteDecBin(1000));
