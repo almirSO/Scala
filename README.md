@@ -10,6 +10,7 @@ println(" ");
           0 1 2 3 4
 https://pt.slideshare.net/gustavogfs94/introduo-ao-paradigma-funcional-com-scala
 http://www.dclick.com.br/2010/12/01/utilizando-listas-em-scala/
+https://drive.google.com/drive/folders/0B5wF9O40_yU6MzNpRFBNRGRSSGc
 */
 
 def pascal(col: Int, lin: Int): Int = (col,lin) match{
